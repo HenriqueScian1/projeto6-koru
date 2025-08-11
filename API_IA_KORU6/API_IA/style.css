@@ -1,0 +1,171 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #e0f2f7;
+    margin: 0;
+    color: #333;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    width: 90%;
+    max-width: 700px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+h1 {
+    color: #007bff;
+    margin-bottom: 25px;
+    font-size: 2em;
+}
+
+.api-key-section, .input-section {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+input[type="password"],
+textarea {
+    width: calc(100% - 22px); 
+    padding: 12px;
+    border: 1px solid #b0e0e6; 
+    border-radius: 6px;
+    font-size: 1em;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+input[type="password"]:focus,
+textarea:focus {
+    border-color: #007bff; 
+    outline: none;
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.input-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+button {
+    background-color: #28a745; 
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #218838; 
+    transform: translateY(-2px); 
+}
+
+button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.status-section {
+    margin-top: 20px;
+    min-height: 30px;
+}
+
+#loading-indicator {
+    color: #007bff;
+    font-style: italic;
+}
+
+#error-message {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+.response-section {
+    text-align: left;
+    border-top: 1px solid #eee;
+    padding-top: 25px;
+    margin-top: 25px;
+}
+
+.response-section h2 {
+    color: #007bff;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+#ai-response {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    min-height: 80px;
+    color: #333;
+    white-space: pre-wrap;
+    word-wrap: break-word; 
+    border: 1px solid #e9ecef;
+}
+
+.response-actions {
+    margin-top: 15px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.response-actions button {
+    background-color: #6c757d;
+    padding: 8px 15px;
+    font-size: 0.9em;
+}
+
+.response-actions button:hover {
+    background-color: #5a6268;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    button {
+        font-size: 1em;
+        padding: 10px 20px;
+    }
+
+    .response-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+

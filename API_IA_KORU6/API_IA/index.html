@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assistente de IA Web</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Assistente de IA Web</h1>
+
+        <div class="api-key-section">
+            <label for="api-key">Chave da API (OpenAI/Gemini):</label>
+            <input type="password" id="api-key" placeholder="Cole sua chave de API aqui...">
+        </div>
+
+        <div class="input-section">
+            <textarea id="user-question" placeholder="Digite sua pergunta aqui..."></textarea>
+            <button id="ask-button">Perguntar</button>
+        </div>
+
+        <div class="status-section">
+            <p id="loading-indicator" class="hidden">Carregando...</p>
+            <p id="error-message" class="hidden error"></p>
+        </div>
+
+        <div class="response-section">
+            <h2>Resposta da IA:</h2>
+            <p id="ai-response"></p>
+            <div class="response-actions">
+                <button id="clear-button" class="hidden">Limpar Resposta</button>
+                <button id="copy-button" class="hidden">Copiar Resposta</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
