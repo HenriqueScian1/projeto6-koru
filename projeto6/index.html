@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Assistente de IA com Gemini</title>
+    <meta name="description" content="Assistente de IA powered by Google Gemini">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+        <h1>Assistente de IA com Gemini</h1>
+
+        <form id="aiForm">
+            <div class="input-group">
+                <label for="question">Digite sua pergunta:</label>
+                <textarea id="question" rows="5" placeholder="Ex: Como funciona a API do Gemini?" required></textarea>
+            </div>
+
+            <button type="submit" id="askBtn">Perguntar</button>
+        </form>
+
+        <p id="status" aria-live="polite"></p>
+
+        <section id="responseSection" hidden>
+            <h2>Resposta</h2>
+            <div id="answer" class="response-box" role="region" aria-live="polite"></div>
+        </section>
+    </main>
+
+
+    <script type="module" src="script.js"></script>
+
+
+</body>
+
+</html>
