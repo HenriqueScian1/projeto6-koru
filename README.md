@@ -1,6 +1,4 @@
----
 
-```markdown
 # 🤖 Assistente de IA Web — Aulas 22 e 25 (Projeto Fullstack)
 
 ## 📌 Visão Geral
@@ -168,5 +166,3 @@ Ao finalizar, você terá criado uma aplicação que:
 
 ```
 
----
-```
