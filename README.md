@@ -150,19 +150,101 @@ const apiKey = "SUA_API_KEY_GEMINI";
 
 ---
 
-## 🏁 Conclusão
+🤖 Assistente de IA Web — Parte 2 (Melhorias e UX Avançada)
+📌 Visão Geral
 
-Ao finalizar, você terá criado uma aplicação que:
+Nesta segunda etapa do Projeto Fullstack, vamos evoluir o Assistente de IA Web criado na Parte 1, adicionando novas funcionalidades e melhorias na experiência do usuário (UX), além de otimizar a responsividade para dispositivos móveis.
+🎯 Objetivos da Parte 2
 
-✅ Integra com uma API de IA real
-✅ Possui interface profissional e responsiva
-✅ Segue boas práticas de desenvolvimento
-✅ Oferece excelente experiência do usuário
-✅ Demonstra conceitos fundamentais da web
+Ao final desta etapa, você será capaz de:
 
----
+    Adicionar botões de ação (Limpar e Copiar resposta)
 
-📜 *Este projeto é uma base sólida para criar aplicações modernas usando tecnologias fundamentais da web.*
+    Melhorar a organização e o design da interface
 
-```
+    Implementar feedback visual e animações
+
+    Tornar a aplicação mais responsiva (mobile-first)
+
+    Aperfeiçoar usabilidade com recursos extras
+
+📂 Funcionalidades Adicionadas
+01 — Botão "Limpar"
+
+    Remove a resposta atual da tela
+
+    Limpa o campo de pergunta
+
+    Oculta a área de resposta
+
+    (Opcional) Confirmação antes de limpar
+
+02 — Botão "Copiar"
+
+    Copia o texto da resposta da IA usando navigator.clipboard
+
+    Mostra feedback visual quando a cópia é bem-sucedida
+
+    Tratamento de erros se o clipboard não estiver disponível
+
+03 — Melhorias na Interface
+
+    Exibir a pergunta feita junto com a resposta
+
+    Organização intuitiva dos botões
+
+    Ícones para melhorar a identificação das ações
+
+    Animações suaves na exibição dos elementos
+
+04 — Responsividade Aprimorada
+
+    Layout otimizado para dispositivos móveis
+
+    Botões grandes e fáceis de tocar
+
+    Texto legível em telas pequenas
+
+05 — Funcionalidades Extras
+
+    Contador de caracteres no campo de pergunta
+
+    Salvar a API Key no localStorage (opcional)
+
+🔮 Próximos Passos (Ideias de Extensão)
+
+    Histórico de conversas salvas
+
+    Temas Dark Mode / Light Mode
+
+    Suporte a múltiplos provedores (Anthropic, Google Gemini, etc.)
+
+    Renderização Markdown para respostas formatadas
+
+    Exportar conversas em arquivo ou PDF
+
+🎤 Apresentação do Projeto
+
+📅 Data: 18 de agosto
+🕒 Tempo máximo: 4 minutos por grupo
+
+Regras:
+
+    Mostrar o site funcionando (ex.: via GitHub Pages)
+
+    Não é obrigatório que todos do grupo falem
+
+    Pode ser feita apresentação no PowerPoint ou similar
+
+    Cronômetro será usado para controle de tempo
+
+Dicas para o Pitch:
+
+    Comece explicando o objetivo do projeto
+
+    Demonstre as funcionalidades principais
+
+    Destaque os diferenciais da aplicação
+
+    Ensaie para respeitar o tempo limite
 
