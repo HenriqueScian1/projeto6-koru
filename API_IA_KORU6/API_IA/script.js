@@ -8,11 +8,39 @@ document.addEventListener("DOMContentLoaded", () => {
     const clearButton = document.getElementById("clear-button");
     const copyButton = document.getElementById("copy-button");
     const charCount = document.getElementById("char-count");
+    const conversationHistoryDiv = document.getElementById("conversation-history");
+    const clearHistoryButton = document.getElementById("clear-history-button");
+    const themeToggleButton = document.getElementById("theme-toggle");
     const MAX_CHARS = 500;
 
     const savedApiKey = localStorage.getItem("openai_api_key");
     if (savedApiKey) {
         apiKeyInput.value = savedApiKey;
+    }
+
+    let conversation = JSON.parse(localStorage.getItem("conversationHistory")) || [];
+
+    function renderHistory() {
+        conversationHistoryDiv.innerHTML = "";
+        if (conversation.length === 0) {
+            clearHistoryButton.classList.add("hidden");
+            return;
+        }
+        clearHistoryButton.classList.remove("hidden");
+        conversation.forEach((entry, index) => {
+            const entryDiv = document.createElement("div");
+            entryDiv.classList.add("history-entry");
+            entryDiv.innerHTML = `
+                <p><strong>Você:</strong> ${entry.question}</p>
+                <p><strong>IA:</strong> ${entry.response}</p>
+            `;
+            conversationHistoryDiv.appendChild(entryDiv);
+        });
+        conversationHistoryDiv.scrollTop = conversationHistoryDiv.scrollHeight;
+    }
+
+    function saveHistory() {
+        localStorage.setItem("conversationHistory", JSON.stringify(conversation));
     }
 
     function showError(message) {
@@ -51,6 +79,14 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+    clearHistoryButton.addEventListener("click", () => {
+        if (confirm("Tem certeza que deseja limpar todo o histórico de conversas?")) {
+            conversation = [];
+            saveHistory();
+            renderHistory();
+        }
+    });
+
     userQuestionInput.addEventListener("input", () => {
         const currentLength = userQuestionInput.value.length;
         charCount.textContent = `${currentLength}/${MAX_CHARS}`;
@@ -63,6 +99,29 @@ document.addEventListener("DOMContentLoaded", () => {
             askButton.disabled = false;
             hideError();
         }
+    });
+
+    function applyTheme(theme) {
+        document.body.classList.toggle("dark-mode", theme === "dark");
+        themeToggleButton.innerHTML = theme === "dark" ? 
+            '<i class="fas fa-sun"></i>' : 
+            '<i class="fas fa-moon"></i>';
+    }
+
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) {
+        applyTheme(savedTheme);
+    } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        applyTheme("dark");
+    } else {
+        applyTheme("light");
+    }
+
+    themeToggleButton.addEventListener("click", () => {
+        const currentTheme = document.body.classList.contains("dark-mode") ? "dark" : "light";
+        const newTheme = currentTheme === "dark" ? "light" : "dark";
+        localStorage.setItem("theme", newTheme);
+        applyTheme(newTheme);
     });
 
     askButton.addEventListener("click", async () => {
@@ -122,6 +181,10 @@ document.addEventListener("DOMContentLoaded", () => {
             clearButton.classList.remove("hidden");
             copyButton.classList.remove("hidden");
 
+            conversation.push({ question: question, response: aiResponseText });
+            saveHistory();
+            renderHistory();
+
         } catch (error) {
             console.error("Erro:", error);
             showError(`Ocorreu um erro: ${error.message}. Verifique sua chave de API e sua conexão.`);
@@ -132,5 +195,7 @@ document.addEventListener("DOMContentLoaded", () => {
             charCount.textContent = `0/${MAX_CHARS}`;
         }
     });
+
+    renderHistory(); 
 });
 
