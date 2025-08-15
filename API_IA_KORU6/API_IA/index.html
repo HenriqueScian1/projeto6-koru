@@ -9,7 +9,10 @@
 </head>
 <body>
     <div class="container">
-        <h1>Assistente de IA Web</h1>
+        <div class="header">
+            <h1>Assistente de IA Web</h1>
+            <button id="theme-toggle" class="theme-toggle"><i class="fas fa-moon"></i></button>
+        </div>
 
         <div class="api-key-section">
             <label for="api-key">Chave da API (OpenAI/Gemini):</label>
@@ -36,6 +39,12 @@
                 <button id="clear-button" class="hidden"><i class="fas fa-eraser"></i> Limpar Resposta</button>
                 <button id="copy-button" class="hidden"><i class="fas fa-copy"></i> Copiar Resposta</button>
             </div>
+        </div>
+
+        <div class="history-section">
+            <h2>Histórico de Conversas:</h2>
+            <div id="conversation-history"></div>
+            <button id="clear-history-button" class="hidden"><i class="fas fa-trash-alt"></i> Limpar Histórico</button>
         </div>
     </div>
     <script src="script.js"></script>
