@@ -1,39 +1,45 @@
 <!doctype html>
 <html lang="pt-BR">
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Assistente de IA com Gemini</title>
-    <meta name="description" content="Assistente de IA powered by Google Gemini">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Assistente de IA (Gemini)</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-    <main>
-        <h1>Assistente de IA com Gemini</h1>
+  <main>
+    <h1>Assistente de IA</h1>
 
-        <form id="aiForm">
-            <div class="input-group">
-                <label for="question">Digite sua pergunta:</label>
-                <textarea id="question" rows="5" placeholder="Ex: Como funciona a API do Gemini?" required></textarea>
-            </div>
+    <form id="aiForm">
+      <div class="input-group">
+        <label for="question">Sua pergunta</label>
+        <textarea id="question" rows="5" placeholder="Ex: Quantas pessoas ficaram com falta no dia 30/06? kkkk" required></textarea>
+      </div>
 
-            <button type="submit" id="askBtn">Perguntar</button>
-        </form>
+      <div class="actions">
+        <button type="submit" id="askBtn">Perguntar</button>
+        <button type="button" id="copyBtn" disabled>Copiar resposta</button>
+        <button type="button" id="clearBtn">Limpar</button>
+      </div>
+    </form>
 
-        <p id="status" aria-live="polite"></p>
+    <p id="status" aria-live="polite"></p>
 
-        <section id="responseSection" hidden>
-            <h2>Resposta</h2>
-            <div id="answer" class="response-box" role="region" aria-live="polite"></div>
-        </section>
-    </main>
+    <section id="responseSection" hidden>
+      <h2>Resultado</h2>
+      <div class="qa">
+        <div class="q">
+          <strong>Pergunta</strong>
+          <p id="questionEcho"></p>
+        </div>
+        <div class="a">
+          <strong>Resposta</strong>
+          <div id="answer" class="response-box" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-
-    <script type="module" src="script.js"></script>
-
-
+  <script type="module" src="script.js"></script>
 </body>
-
 </html>

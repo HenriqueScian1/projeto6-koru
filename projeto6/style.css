@@ -1,58 +1,72 @@
 body {
-    font-family: system-ui, sans-serif;
-    max-width: 720px;
-    margin: 24px auto;
-    padding: 0 12px;
+  font-family: system-ui, sans-serif;
+  max-width: 720px;
+  margin: 24px auto;
+  padding: 0 12px;
 }
 
-.input-group {
-    margin: 12px 0;
-}
+.input-group { margin: 12px 0; }
 
 label {
-    display: block;
-    margin-bottom: 4px;
+  display: block;
+  margin-bottom: 4px;
+  font-weight: 600;
 }
 
-textarea {
-    width: 100%;
-    padding: 8px;
-    font-size: 16px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    resize: vertical;
-    min-height: 100px;
+textarea,
+input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  resize: vertical;
 }
+
+textarea { min-height: 100px; }
 
 button {
-    padding: 10px 16px;
-    font-weight: 600;
-    cursor: pointer;
-    background: #4285f4;
-    color: white;
-    border: none;
-    border-radius: 4px;
+  padding: 10px 16px;
+  font-weight: 600;
+  cursor: pointer;
+  background: #4285f4;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
 }
 
 button:disabled {
-    background: #ccc;
-    cursor: not-allowed;
+  background: #ccc;
+  cursor: not-allowed;
 }
 
 #status {
-    min-height: 20px;
-    color: #666;
-    margin: 8px 0;
+  min-height: 20px;
+  color: #666;
+  margin: 8px 0;
 }
 
 .response-box {
-    background: #f6f8fa;
-    padding: 12px;
-    border-radius: 8px;
-    white-space: pre-wrap;
-    border: 1px solid #eee;
+  background: #f6f8fa;
+  padding: 12px;
+  border-radius: 4px;
+  white-space: pre-wrap;
+  border: 1px solid #eee;
 }
 
-#responseSection {
-    margin-top: 16px;
+#responseSection { margin-top: 16px; }
+
+.actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 10px 0;
 }
+
+.qa {
+  border: 1px solid #eee;
+  border-radius: 4px;
+}
+.q, .a { padding: 12px; }
+.q { border-bottom: 1px solid #eee; }
+.q p { margin: 6px 0 0; }
