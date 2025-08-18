@@ -1,0 +1,143 @@
+:root {
+  --bg-color: #e8f5e9;   
+  --text-color: #1b5e20;
+  --primary-color: #2e7d32; 
+  --btn-text: #fff;
+  --box-bg: #f1f8f6;
+  --border-color: #c8e6c9;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  max-width: 720px;
+  margin: 24px auto;
+  padding: 0 12px;
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+textarea,
+input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  resize: vertical;
+  background: #fff;
+  color: var(--text-color);
+}
+
+button {
+  padding: 10px 16px;
+  font-weight: 600;
+  cursor: pointer;
+  background: var(--primary-color);
+  color: var(--btn-text);
+  border: none;
+  border-radius: 4px;
+}
+
+button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+#status {
+  min-height: 20px;
+  color: var(--text-color);
+  margin: 8px 0;
+}
+
+.response-box {
+  background: var(--box-bg);
+  padding: 12px;
+  border-radius: 4px;
+  white-space: pre-wrap;
+  border: 1px solid var(--border-color);
+}
+
+#responseSection { margin-top: 16px; }
+
+.actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 10px 0;
+}
+
+.qa {
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+}
+.q, .a { padding: 12px; }
+.q { border-bottom: 1px solid var(--border-color); }
+.q p { margin: 6px 0 0; }
+
+body.dark {
+  --bg-color: #1a001f;
+  --text-color: #e1bee7;
+  --primary-color: #9c27b0;
+  --btn-text: #fff;
+  --box-bg: #2a0033;
+  --border-color: #6a1b9a;
+}
+#charCount {
+  display: block;
+  margin-top: 4px;
+  font-size: 14px;
+  color: #555;
+}
+#historySection {
+  margin-top: 24px;
+  border-top: 1px solid var(--border-color);
+  padding-top: 12px;
+}
+
+#historyList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#historyList li {
+  padding: 8px;
+  margin: 4px 0;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  background: var(--box-bg);
+}
+
+#historyList li:hover {
+  background: var(--primary-color);
+  color: var(--btn-text);
+}
+#clearHistoryBtn {
+  padding: 6px 12px;
+  margin-bottom: 10px;
+  background: #d32f2f;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+#clearHistoryBtn:hover {
+  background: #b71c1c;
+}
+#exportHistoryBtn {
+  padding: 6px 12px;
+  margin-left: 8px;
+  margin-bottom: 10px;
+  background: #1976d2;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+#exportHistoryBtn:hover {
+  background: #0d47a1;
+}
