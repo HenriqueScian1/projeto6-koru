@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Assistente de IA (Gemini)</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main>
+    <h1>Assistente de IA</h1>
+
+    <form id="aiForm">
+      <div class="input-group">
+      <label for="question">Sua pergunta</label>
+      <textarea id="question" rows="5" placeholder="Ex: Quantas pessoas ficaram com falta no dia 30/06? kkkk" required></textarea>
+      <small id="charCount">0 caracteres</small>
+      </div>
+
+      <div class="actions">
+      <button type="submit" id="askBtn">Perguntar</button>
+      <button type="button" id="copyBtn" disabled>Copiar resposta</button>
+      <button type="button" id="clearBtn">Limpar</button>
+      <button type="button" id="themeBtn">🌙 Modo Escuro</button>
+      </div>
+    </form>
+
+    <p id="status" aria-live="polite"></p>
+
+    <section id="responseSection" hidden>
+      <h2>Resultado</h2>
+      <div class="qa">
+        <div class="q">
+          <strong>Pergunta</strong>
+          <p id="questionEcho"></p>
+        </div>
+        <div class="a">
+          <strong>Resposta</strong>
+          <div id="answer" class="response-box" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <section id="historySection">
+  <h2>Histórico</h2>
+  <button type="button" id="clearHistoryBtn">🗑️ Limpar Histórico</button>
+  <ul id="historyList"></ul>
+</section>
+<button type="button" id="exportHistoryBtn">📤 Exportar Conversas</button>
+
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
